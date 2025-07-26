@@ -1,18 +1,31 @@
+import cLogo from '../logos/c.png';
+import pythonLogo from '../logos/python.png';
+import nodeLogo from '../logos/node.png';
+import mysqlLogo from '../logos/mysql.png';
+import htmlLogo from '../logos/html.png';
+import cssLogo from '../logos/css.png';
+import figmaLogo from '../logos/figma.png';
+import photoshopLogo from '../logos/photoshop.png';
+import blenderLogo from '../logos/blender.png';
+import tailwindLogo from '../logos/tailwind.png';
+import reactLogo from '../logos/react.png';
+import jsLogo from '../logos/javascript.png';
+
+
 export default function Resume() {
   const skills = [
-    { name: "C", img: "/logos/c.png" },
-    { name: "Python", img: "/logos/python.png" },
-    { name: "Node.js", img: "/logos/node.png" },
-    { name: "MySQL", img: "/logos/mysql.png" },
-    { name: "API", img: "/logos/api.png" },
-    { name: "HTML5", img: "/logos/html.png" },
-    { name: "CSS3", img: "/logos/css.png" },
-    { name: "Figma", img: "/logos/figma.png" },
-    { name: "Photoshop", img: "/logos/photoshop.png" },
-    { name: "Blender", img: "/logos/blender.png" },
-    { name: "Tailwind CSS", img: "/logos/tailwind.png" },
-    { name: "React", img: "/logos/react.png" },
-    { name: "JavaScript", img: "/logos/javascript.png" },
+    { name: "C", img: cLogo },
+    { name: "Python", img: pythonLogo },
+    { name: "Node.js", img: nodeLogo },
+    { name: "PostgreSQL", img: mysqlLogo },
+    { name: "HTML5", img: htmlLogo },
+    { name: "CSS3", img: cssLogo },
+    { name: "Figma", img: figmaLogo },
+    { name: "Photoshop", img: photoshopLogo },
+    { name: "Blender", img: blenderLogo },
+    { name: "Tailwind CSS", img: tailwindLogo },
+    { name: "React", img: reactLogo },
+    { name: "JavaScript", img: jsLogo },
   ];
 
   return (
