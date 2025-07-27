@@ -19,27 +19,45 @@ export default function CursorFollower() {
 
     let last = { x: 0, y: 0, time: Date.now() };
 
-    const move = (e) => {
-      const now = Date.now();
-      const dt = now - last.time;
-      const dx = e.clientX - last.x;
-      const dy = e.clientY - last.y;
-      const speed = Math.sqrt(dx * dx + dy * dy) / dt;
+const move = (e) => {
+  // Récupère le timestamp actuel en millisecondes
+  const now = Date.now();
 
-      setX(e.clientX - 15);
-      setY(e.clientY - 15);
+  // Calcule le temps écoulé depuis le dernier mouvement
+  const dt = now - last.time;
 
-      // effet selon la vitesse
-      const scale = 1 + Math.min(speed * 0.5, 0.5);
-      gsap.to(follower.current, {
-        scaleX: 1 + scale * (dx / (Math.abs(dx) + Math.abs(dy) || 1)) * 0.2,
-        scaleY: 1 + scale * (dy / (Math.abs(dx) + Math.abs(dy) || 1)) * 0.2,
-        rotation: Math.atan2(dy, dx) * 180 / Math.PI,
-        duration: 0.3,
-      });
+  // Calcule le déplacement du curseur depuis la dernière position (axe X et Y)
+  const dx = e.clientX - last.x;
+  const dy = e.clientY - last.y;
 
-      last = { x: e.clientX, y: e.clientY, time: now };
-    };
+  // Calcule la vitesse du curseur en pixels par milliseconde
+  // Formule : distance / temps
+  const speed = Math.sqrt(dx * dx + dy * dy) / dt;
+
+  // Met à jour la position du cercle à la position actuelle de la souris
+  // On retire 15px pour centrer le cercle par rapport au curseur
+  setX(e.clientX - 15);
+  setY(e.clientY - 15);
+
+  // Calcule un facteur d'échelle en fonction de la vitesse du curseur
+  // Limite la déformation maximale à 0.5 pour éviter un effet trop extrême
+  const scale = 1 + Math.min(speed * 0.5, 0.5);
+
+  // Anime le cercle avec une déformation selon la direction du mouvement
+  // - scaleX : étirement horizontal
+  // - scaleY : étirement vertical
+  // - rotation : angle du mouvement pour orienter la forme
+  gsap.to(follower.current, {
+    scaleX: 1 + scale * (dx / (Math.abs(dx) + Math.abs(dy) || 1)) * 0.2,
+    scaleY: 1 + scale * (dy / (Math.abs(dx) + Math.abs(dy) || 1)) * 0.2,
+    rotation: Math.atan2(dy, dx) * 180 / Math.PI,
+    duration: 0.3, // durée de l'animation en secondes
+  });
+
+  // Sauvegarde les nouvelles coordonnées et l'heure pour la prochaine frame
+  last = { x: e.clientX, y: e.clientY, time: now };
+};
+
 
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);

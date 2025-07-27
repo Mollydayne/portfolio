@@ -2,6 +2,7 @@ import MonogrammeBackground from './MonogrammeBackground'
 import SpinningStar from './SpinningStar'
 import ClickableStar from './ClickableStar'
 import HeroText from './HeroText'
+import LiquidGlass from "../components/LiquidGlass";
 
 
 export default function Hero() {
@@ -10,6 +11,7 @@ export default function Hero() {
       <MonogrammeBackground />
       <SpinningStar />
       <ClickableStar />
+      <LiquidGlass />
 
       <div className="relative z-10 flex justify-center items-center h-full">
                <HeroText />
