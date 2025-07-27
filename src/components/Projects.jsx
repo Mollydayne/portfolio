@@ -1,18 +1,21 @@
-import { Link } from 'react-router-dom'
+import ProjectBanner from '../components/ProjectBanner'
+import ProjectsOverview from '../components/ProjectsOverview'
 
-const dummyProjects = ['project-1', 'project-2', 'project-3', 'project-4']
 
 export default function Projects() {
   return (
-    <div id="projects" className="p-10 bg-gray-900 text-white">
-      <h2 className="text-2xl font-bold mb-6">My Projects</h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {dummyProjects.map((proj, idx) => (
-<Link to={`/project/${proj}`} key={idx} className="bg-gray-700 hover:bg-gray-600 p-4 rounded transition duration-300">
-            <p className="text-center">{proj.replace('-', ' ')}</p>
-          </Link>
-        ))}
+    <section className="min-h-screen bg-[#1a1a1a] text-white px-6 py-16">
+      
+      {/* Bannière animée */}
+      <ProjectBanner />
+            <ProjectsOverview />
+
+      {/* Le reste de ta section projets ici */}
+      <div className="mt-12">
+        {/* Exemple de grille de projets */}
+        <h2 className="text-4xl font-bold mb-8">Portfolio</h2>
+        {/* Ici tu ajoutes tes cartes ou composants de projets */}
       </div>
-    </div>
+    </section>
   )
 }
