@@ -23,10 +23,6 @@ export default function Home() {
         <About />
       </section>
 
-      <section id="resume" className="snap-start h-screen overflow-y-auto">
-  <Resume />
-</section>
-
       <section id="videos" className="snap-start h-screen">
         <Videos />
       </section>
@@ -34,7 +30,9 @@ export default function Home() {
       <section id="projects" className="snap-start h-screen">
         <Projects />
       </section>
-
+<section id="resume" className="snap-start h-screen overflow-y-auto">
+  <Resume />
+</section>
       
     </div>
   )
