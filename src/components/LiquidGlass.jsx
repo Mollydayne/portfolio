@@ -15,7 +15,7 @@ export default function LiquidGlass() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+<div className="pointer-events-none absolute inset-0 z-10 overflow-hidden">
       <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           {/* Filtre de distorsion type verre */}
