@@ -86,3 +86,38 @@ html {
 .animate-spin-slow {
   animation: spin 12s linear infinite;
 }
+
+/* index.css */
+@keyframes drawBorder {
+  0% {
+    border-width: 0;
+    opacity: 0;
+  }
+  100% {
+    border-width: 2px;
+    opacity: 1;
+  }
+}
+
+.animate-border {
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  border-radius: 0.75rem; /* 12px */
+  animation: drawBorder 1.2s ease forwards;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}

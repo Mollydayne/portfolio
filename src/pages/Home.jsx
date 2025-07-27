@@ -35,9 +35,7 @@ export default function Home() {
         <Projects />
       </section>
 
-      <section id="contact" className="snap-start h-screen">
-        <Footer />
-      </section>
+      
     </div>
   )
 }
